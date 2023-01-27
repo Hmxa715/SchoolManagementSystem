@@ -46,8 +46,8 @@ const Login = () => {
                                 <div className="field mt-5">
                                     <button className="button is-success is-fullwidth">Login</button>
                                 </div>
-                                <div className="field mt-5">
-                                    <a className="is-success is-fullwidth" href="/register">Want Register?</a>
+                                <div class="field mt-5 signin">
+                                    <p>Create an account? <a className="is-success is-fullwidth" href="/register">Register</a>.</p>
                                 </div>
                             </form>
                         </div>
