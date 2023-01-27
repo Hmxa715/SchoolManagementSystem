@@ -1,4 +1,4 @@
-# SchoolManagementSystem
+# School Management System
 # ReactJS, Express, NodeJS, MySQL
 1. Download project, go to 'cd SchoolManagementSystem' and run command 'npm i'.
 2. Run command 'npm start' make terminal open.
