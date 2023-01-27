@@ -76,7 +76,7 @@ const Register = () => {
                                 <div className="field mt-5">
                                     <button className="button is-success is-fullwidth">Register</button>
                                 </div>
-                                <div class="field mt-5 signin">
+                                <div className="field mt-5 signin">
                                     <p>Already have an account? <a className="is-success is-fullwidth" href="/login">Login</a>.</p>
                                 </div>
                             </form>

@@ -11,12 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.has-custom-background{
+ background-color: #f7f7f7 !important
+}
 .custom-link {
     float: right;
     position: relative;
     top: -30px;
 }
 .signin {
-  background-color: #f1f1f1;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  background-color: #f7f7f7;
   text-align: center;
 }

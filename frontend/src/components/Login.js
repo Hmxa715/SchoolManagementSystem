@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -15,7 +15,7 @@ const Login = () => {
                 email: email,
                 password: password
             });
-            history("/");
+            history("/dashboard");
         } catch (error) {
             if (error.response) {
                 setMsg(error.response.data.msg);
@@ -24,7 +24,7 @@ const Login = () => {
     }
 
     return (
-        <section className="hero has-background-grey-light is-fullheight is-fullwidth">
+        <section className="hero has-custom-background is-fullheight is-fullwidth">
             <div className="hero-body">
                 <div className="container">
                     <div className="columns is-centered">
@@ -46,7 +46,7 @@ const Login = () => {
                                 <div className="field mt-5">
                                     <button className="button is-success is-fullwidth">Login</button>
                                 </div>
-                                <div class="field mt-5 signin">
+                                <div className="field mt-5 signin">
                                     <p>Create an account? <a className="is-success is-fullwidth" href="/register">Register</a>.</p>
                                 </div>
                             </form>

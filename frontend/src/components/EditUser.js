@@ -11,6 +11,7 @@ const EditUser = () => {
 
     useEffect(() => {
         getUserById();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const updateUser = async (e) => {
@@ -21,7 +22,7 @@ const EditUser = () => {
                 email,
                 gender,
             });
-            navigate("/");
+            navigate("/dashboard");
         } catch (error) {
             console.log(error);
         }

@@ -16,7 +16,7 @@ const AddUser = () => {
                 email,
                 gender,
             });
-            navigate("/");
+            navigate("/dashboard");
         } catch (error) {
             console.log(error);
         }
