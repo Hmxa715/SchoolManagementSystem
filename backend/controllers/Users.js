@@ -37,14 +37,14 @@ export const Register = async (req, res) => {
             name: name,
             email: email,
             password: hashPassword,
-            gender: gender
+            gender: gender,
+            tenantId:'7a527835-22ba-457b-b8ff-96732358afc2' //for tenant one only
         });
-        res.json({ msg: "Registration Successful" });
+        res.json({ msg: "Registrated Successfully" });
     } catch (err) {
         console.log(err);
     }
 }
-
 
 export const updateUser = async (req, res) => {
     try {
@@ -53,7 +53,7 @@ export const updateUser = async (req, res) => {
                 id: req.params.id
             }
         });
-        res.status(200).json({ msg: "User Updated" });
+        res.status(200).json({ msg: "User Updated Successfully" });
     } catch (error) {
         console.log(error.message);
     }
@@ -66,7 +66,7 @@ export const deleteUser = async (req, res) => {
                 id: req.params.id
             }
         });
-        res.status(200).json({ msg: "User Deleted" });
+        res.status(200).json({ msg: "User Deleted Successfully" });
     } catch (error) {
         console.log(error.message);
     }
@@ -85,10 +85,12 @@ export const Login = async (req, res) => {
         const name = user[0].name;
         const email = user[0].email;
         const gender = user[0].gender;
-        const accessToken = jwt.sign({ userId, name, email, gender }, process.env.ACCESS_TOKEN_SECRET, {
+        const isAdmin = user[0].is_admin;
+        const isActive = user[0].is_active;
+        const accessToken = jwt.sign({ userId, name, email, gender, isAdmin, isActive }, process.env.ACCESS_TOKEN_SECRET, {
             expiresIn: '15s'
         });
-        const refreshToken = jwt.sign({ userId, name, email, gender }, process.env.REFRESH_TOKEN_SECRET, {
+        const refreshToken = jwt.sign({ userId, name, email, gender, isAdmin, isActive }, process.env.REFRESH_TOKEN_SECRET, {
             expiresIn: '1d'
         });
         await Users.update({ refresh_token: refreshToken }, {

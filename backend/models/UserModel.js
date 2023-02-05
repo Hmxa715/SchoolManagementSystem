@@ -1,4 +1,4 @@
-import { Sequelize } from "sequelize";
+import { Sequelize, UUID } from "sequelize";
 import db from "../config/Database.js";
 
 const { DataTypes } = Sequelize;
@@ -18,6 +18,18 @@ const Users = db.define('users', {
     },
     refresh_token: {
         type: DataTypes.TEXT
+    },
+    is_admin: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+    },
+    is_active: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+    },
+    tenantId: {
+        type: UUID,
+        allowNull: false
     }
 },
     {

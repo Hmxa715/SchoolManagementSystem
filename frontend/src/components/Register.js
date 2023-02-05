@@ -21,7 +21,7 @@ const Register = () => {
                 confPassword: confPassword,
                 gender: gender
             });
-            history("/login");
+            history("/");
         } catch (error) {
             if (error.response) {
                 setMsg(error.response.data.msg);
